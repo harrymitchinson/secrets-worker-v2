@@ -26,9 +26,9 @@ export default function ViewSecretResult({ secret }: Props) {
     >
       <div className="">
         <div className="mb-4">
-          You will not be able to view this secret again again. The encrypted
-          value and password have been destroyed and the secret now only exists
-          in your this current browser session.
+          You will not be able to view this secret again. The encrypted value
+          has been destroyed and the secret now only exists in your this current
+          browser session.
         </div>
         <textarea
           {...register("secret")}
