@@ -17,8 +17,8 @@ export default function FrequentlyAskedQuestions() {
             </summary>
             <div className="mt-4">
               <p className="mb-4">
-                This tool provides a quick, effective and secure way to share
-                one-time secrets.
+                This tool provides a quick and secure way to share one-time
+                secrets.
               </p>
             </div>
           </details>
