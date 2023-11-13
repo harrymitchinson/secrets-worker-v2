@@ -51,7 +51,7 @@ export default function FrequentlyAskedQuestions() {
           </details>
           <details className="w-full">
             <summary className="font-semibold px-4 text-lg cursor-pointer">
-              Is it safe?
+              Is it secure?
             </summary>
             <div className="mt-4">
               <p className="mb-4">

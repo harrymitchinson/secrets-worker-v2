@@ -15,7 +15,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <Providers>
         <body
-          className={`${jetbrains_mono.variable} font-mono relative  sm:bg-gray-900 bg-gray-100 dark:bg-gray-900 dark:sm:bg-gray-900 text-gray-700 dark:text-gray-200 text-md h-screen flex flex-1 flex-col overflow-auto`}
+          className={`${jetbrains_mono.variable} font-mono relative  sm:bg-gray-900 bg-gray-100 dark:bg-indigo-700 dark:sm:bg-gray-900 text-gray-700 dark:text-gray-200 text-md h-screen flex flex-1 flex-col overflow-auto`}
         >
           <div className="relative sm:flex flex-1 flex-col items-center justify-center py-0 sm:py-16">
             {children}
