@@ -3,15 +3,21 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://acme.com",
+      url: "https://secrets.harrymitchinson.dev",
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://acme.com/v",
+      url: "https://secrets.harrymitchinson.dev/faq",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: "https://secrets.harrymitchinson.dev/v",
+      lastModified: new Date(),
+      changeFrequency: "always",
       priority: 0.8,
     },
   ];

@@ -102,7 +102,7 @@ export default function FrequentlyAskedQuestions() {
                   className="transition text-indigo-500 dark:text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-500 font-bold rounded focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/harrymitchinson/secrets-worker"
+                  href="https://github.com/harrymitchinson/secrets-worker-v2"
                 >
                   GitHub
                 </a>{" "}
