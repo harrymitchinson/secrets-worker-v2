@@ -17,7 +17,7 @@ export default function CreateSecret({ ttls }: Props) {
   const { mutate, data, isPending, isSuccess, reset, isError, error } =
     useMutation({
       mutationFn: async ({ secret, ttl }: Values): Promise<EncryptResponse> => {
-        const res = await fetch("/api/encryptf", {
+        const res = await fetch("/api/encrypt", {
           body: JSON.stringify({ secret, ttl }),
           method: "POST",
         });
