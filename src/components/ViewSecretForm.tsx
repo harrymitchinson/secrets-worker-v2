@@ -39,7 +39,6 @@ export default function ViewSecretForm({
   });
 
   const [hidePassword, setHidePassword] = useState(password != undefined);
-  const submitButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (error != null) {
@@ -51,7 +50,6 @@ export default function ViewSecretForm({
   useEffect(() => {
     if (password != undefined) {
       setHidePassword(true);
-      submitButtonRef?.current?.focus();
     }
   }, [setHidePassword, password]);
 
@@ -85,7 +83,6 @@ export default function ViewSecretForm({
           )}
         </div>
         <Button
-          ref={submitButtonRef}
           type="submit"
           disabled={disabled || !isValid}
           title={disabled ? "Loading..." : "View secret"}

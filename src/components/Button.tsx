@@ -33,7 +33,7 @@ export default function Button({
       disabled={disabled}
       onClick={onClick}
       title={title}
-      className={`transition w-full ${colour} ${hover} ${text} rounded font-bold py-4 px-4 ${outline} disabled:bg-gray-300 disabled:text-gray-400 dark:disabled:bg-gray-700 disabled:text-gray-400`}
+      className={`transition w-full ${colour} ${hover} ${text} rounded font-bold py-4 px-4 ${outline} disabled:bg-gray-300 dark:disabled:bg-gray-700 disabled:text-gray-400`}
       tabIndex={0}
     >
       {children}

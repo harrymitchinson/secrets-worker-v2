@@ -13,7 +13,7 @@ export default function Panel({ title, children }: PropsWithChildren<Props>) {
           {title}
         </h1>
       </header>
-      <main className="w-full max-w-screen-md bg-gray-100 dark:bg-gray-800 shadow-md py-8 px-8 sm:p-8">
+      <main className="w-full max-w-screen-md bg-gray-100 dark:bg-gray-800 shadow-md py-8 px-4 sm:px-8">
         {children}
       </main>
       <footer className="w-full max-w-screen-md sm:rounded-b bg-gray-200 dark:bg-gray-700 shadow-md py-4 px-4 sm:px-8 text-center">

@@ -10,7 +10,7 @@ export default function CreateAnotherSecret({ onClick }: Props) {
         disabled={false}
         onClick={onClick}
         title="Create a new secret"
-        className={`shadow-md transition w-full bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-500 dark:hover:bg-indigo-500 text-gray-100 dark:text-gray-100 sm:rounded font-bold py-4 px-4 focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2 disabled:bg-gray-300  dark:disabled:bg-gray-700 disabled:text-gray-400`}
+        className={`sm:shadow-md transition w-full bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-700 text-gray-100 dark:text-gray-100 sm:rounded font-bold py-4 px-4 focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2 disabled:bg-gray-300  dark:disabled:bg-gray-700 disabled:text-gray-400`}
         tabIndex={0}
       >
         Create a new secret

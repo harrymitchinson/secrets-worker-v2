@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import CreateAnotherSecret from "./CreateAnotherSecretButton";
+import CreateNewSecretButton from "./CreateNewSecretButton";
 import Panel from "./Panel";
 
 export default function FrequentlyAskedQuestions() {
@@ -112,7 +112,7 @@ export default function FrequentlyAskedQuestions() {
           </details>
         </div>
       </Panel>
-      <CreateAnotherSecret onClick={async () => await router.push("/")} />
+      <CreateNewSecretButton onClick={async () => await router.push("/")} />
     </>
   );
 }

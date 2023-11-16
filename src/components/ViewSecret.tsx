@@ -3,7 +3,7 @@
 import { DecryptResponse } from "@/app/api/decrypt/route";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import CreateAnotherSecret from "./CreateAnotherSecretButton";
+import CreateNewSecretButton from "./CreateNewSecretButton";
 import ViewSecretForm, { Values } from "./ViewSecretForm";
 import ViewSecretResult from "./ViewSecretResult";
 import Panel from "./Panel";
@@ -51,7 +51,7 @@ export default function ViewSecret({ id, password }: Props) {
         <Panel title="Your secret">
           <ViewSecretResult secret={data.secret} />
         </Panel>
-        <CreateAnotherSecret onClick={async () => await router.push("/")} />
+        <CreateNewSecretButton onClick={async () => await router.push("/")} />
       </>
     );
   }
