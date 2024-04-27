@@ -15,7 +15,7 @@ const config: Config = {
         leave: "leave 150ms ease-in forwards",
       },
       fontFamily: {
-        // sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
         mono: ["var(--font-jetbrains-mono)", ...defaultTheme.fontFamily.mono],
       },
       keyframes: {

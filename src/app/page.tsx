@@ -22,5 +22,10 @@ function getTTLs() {
 
 export default function Index() {
   const ttls = getTTLs();
-  return <CreateSecret ttls={ttls}></CreateSecret>;
+
+  return (
+    <>
+      <CreateSecret ttls={ttls}></CreateSecret>
+    </>
+  );
 }

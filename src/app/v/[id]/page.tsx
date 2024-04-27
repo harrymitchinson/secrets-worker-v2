@@ -25,5 +25,9 @@ export default async function View({
     return notFound();
   }
 
-  return <ViewSecret id={id} password={searchParams?.p}></ViewSecret>;
+  return (
+    <>
+      <ViewSecret id={id} password={searchParams?.p}></ViewSecret>
+    </>
+  );
 }

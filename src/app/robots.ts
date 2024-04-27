@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/v/",
     },
-    sitemap: "https://secrets.harrymitchinson.dev/sitemap.xml",
+    sitemap: "https://sotsecret.xyz/sitemap.xml",
   };
 }

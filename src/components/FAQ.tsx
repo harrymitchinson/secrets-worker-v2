@@ -10,8 +10,8 @@ export default function FrequentlyAskedQuestions() {
     <>
       <Panel title="FAQs">
         <h2 className="font-bold mb-4 text-xl">Frequently asked questions</h2>
-        <div className="w-full">
-          <details className="w-full mb-2" open={true}>
+        <div className="w-full space-y-2">
+          <details className="w-full" open={true}>
             <summary className="font-semibold px-4 text-lg cursor-pointer">
               What is this for?
             </summary>
@@ -22,7 +22,7 @@ export default function FrequentlyAskedQuestions() {
               </p>
             </div>
           </details>
-          <details className="w-full mb-2">
+          <details className="w-full">
             <summary className="font-semibold px-4 text-lg cursor-pointer">
               How does it work?
             </summary>
@@ -95,24 +95,24 @@ export default function FrequentlyAskedQuestions() {
                   the Cloudflare network.
                 </li>
               </ul>
-              <p className="mb-0">
-                All source code is visible on{" "}
-                <a
-                  title="GitHub"
-                  className="transition text-indigo-500 dark:text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-500 font-bold rounded focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/harrymitchinson/secrets-worker-v2"
-                >
-                  GitHub
-                </a>{" "}
-                but most importantly, you should use your own judgement.
-              </p>
+              <p className="">
+          All source code is visible on{" "}
+            <a
+              title="harrymitchinson/secrets-worker-v2"
+              className="transition text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-500 font-bold rounded focus:outline focus:outline-indigo-600 focus:outline-2 focus:outline-offset-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/harrymitchinson/secrets-worker-v2"
+            >
+              GitHub
+            </a>{" "} but most importantly, you should use your own judgement.
+
+          </p>
             </div>
           </details>
         </div>
       </Panel>
-      <CreateNewSecretButton onClick={async () => await router.push("/")} />
+      <CreateNewSecretButton onClick={() => router.push("/")} />
     </>
   );
 }

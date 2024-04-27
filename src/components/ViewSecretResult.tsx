@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { copyToClipboard } from "./Clipboard";
-import { useEffect } from "react";
 
 export interface Props {
   secret: string;

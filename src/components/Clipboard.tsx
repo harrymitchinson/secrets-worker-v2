@@ -4,14 +4,6 @@ import Toast, { State } from "./Toast";
 async function copyTextToClipboard(text: string): Promise<boolean> {
   try {
     if ("clipboard" in navigator) {
-      // const { state } = await navigator.permissions.query({
-      //   name: "clipboard-write" as PermissionName,
-      // });
-      // if (state === "denied") {
-      //   console.log("denied clipboard API");
-
-      //   return false;
-      // }
       await navigator.clipboard.writeText(text);
       return true;
     } else {

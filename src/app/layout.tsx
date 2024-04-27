@@ -1,8 +1,10 @@
-import "./globals.css";
-import React, { PropsWithChildren } from "react";
-import { JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { PropsWithChildren } from "react";
 import { Toaster } from "react-hot-toast";
 import Providers from "./providers";
+
+import { Metadata } from "next";
+import "./globals.css";
 
 const jetbrains_mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -10,19 +12,29 @@ const jetbrains_mono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+export const metadata: Metadata = {
+  title: "One Time Secret",
+  description: "Share a one time secret",
+};
+
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
-      <Providers>
+    <>
+      <html lang="en" className={`${jetbrains_mono.variable} ${inter.variable}`}>
         <body
-          className={`${jetbrains_mono.variable} font-mono relative bg-indigo-700 sm:bg-gray-900 text-gray-700 dark:text-gray-200 text-md h-screen flex flex-1 flex-col overflow-auto`}
-        >
-          <div className="relative sm:flex flex-1 flex-col items-center justify-center py-0 sm:py-16">
-            {children}
+          className={`h-screen font-sans text-gray-700 dark:text-gray-200 bg-indigo-50 dark:bg-indigo-950 `}>
+          <div className="relative md:flex flex-1 flex-col items-center justify-center py-0 md:py-16">
+            <Providers>{children}</Providers>
           </div>
-          <Toaster></Toaster>
+          <Toaster />
         </body>
-      </Providers>
-    </html>
+      </html>
+    </>
   );
 }
