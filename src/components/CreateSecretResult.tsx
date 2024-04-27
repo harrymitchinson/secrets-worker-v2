@@ -37,7 +37,7 @@ export default function CreateSecretResult({ url, password }: Props) {
 
         <input
           {...register("link")}
-          className="transition mt-4 mb-8 block w-full rounded bg-gray-100 dark:bg-gray-700 border border-gray-300  dark:border-gray-600 dark:hover:border-gray-500 px-4 py-2 pr-8 shadow focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
+          className="transition mt-6 mb-8 block w-full rounded bg-gray-100 dark:bg-gray-700 border border-gray-300  dark:border-gray-600 dark:hover:border-gray-500 px-4 py-2 pr-8 shadow focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
           type="text"
           readOnly={true}
           title="Sharing link"
