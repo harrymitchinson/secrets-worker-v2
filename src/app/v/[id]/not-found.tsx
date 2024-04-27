@@ -6,8 +6,8 @@
 export default function NotFound() {
   return (
     <>
-      <main className="w-full max-w-screen-md md:flex text-gray-400">
-        <div className="w-full p-8 md:pr-4 pb-8 md:border-r border-gray-800 text-center md:text-right text-6xl">
+      <main className="w-full max-w-screen-md md:flex">
+        <div className="font-mono w-full p-8 md:pr-4 pb-8 md:border-r border-indigo-700 dark:border-indigo-200 text-center md:text-right text-6xl">
           <h1>404</h1>
         </div>
         <div className="w-full p-8 md:pl-4 block">
@@ -19,7 +19,7 @@ export default function NotFound() {
           >
             home page
           </a>{" "}
-          to create a new one.
+          instead.
         </div>
       </main>
     </>

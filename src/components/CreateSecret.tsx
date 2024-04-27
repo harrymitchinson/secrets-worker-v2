@@ -34,7 +34,7 @@ export default function CreateSecret({ ttls }: Props) {
   if (isSuccess) {
     return (
       <>
-        <Panel title="Share your secret">
+        <Panel title="Share Your One Time Secret">
           <CreateSecretResult
             url={`${window.location.href}v/${data.id}`}
             password={data.password}
@@ -46,7 +46,7 @@ export default function CreateSecret({ ttls }: Props) {
   }
 
   return (
-    <Panel title="Create a secret">
+    <Panel title="One Time Secret">
       <CreateSecretFrom
         ttls={ttls}
         onSubmit={async (data: Values) => {

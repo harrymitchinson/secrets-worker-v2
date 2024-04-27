@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { copyToClipboard } from "./Clipboard";
+import Alert from "./Alert";
 
 export interface Props {
   url: string;
@@ -31,18 +32,27 @@ export default function CreateSecretResult({ url, password }: Props) {
     >
       <div className="">
         <div className="mb-4">
-          Your secret has been created and your sharing link is ready. Once you
-          leave this page, you will not be able to see the sharing link again.
+          Your secret has been created and your sharing link is ready.
         </div>
-        <label className="font-bold">Your sharing link</label>
+
         <input
           {...register("link")}
-          className="transition mt-4 block w-full rounded bg-gray-100 dark:bg-gray-700 border border-gray-300  dark:border-gray-600 dark:hover:border-gray-500 px-4 py-2 pr-8 shadow focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
+          className="transition mt-4 mb-8 block w-full rounded bg-gray-100 dark:bg-gray-700 border border-gray-300  dark:border-gray-600 dark:hover:border-gray-500 px-4 py-2 pr-8 shadow focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
           type="text"
           readOnly={true}
           title="Sharing link"
           onClick={copyToClipboard("sharing link", link)}
         />
+        <Alert>
+          <p className="font-bold">
+            You will not be able to view this sharing link again
+          </p>
+          <p>
+            Once you leave this page, the sharing link will no longer be
+            available. If you lose the link, you will have to create a new
+            secret to generate a new sharing link.
+          </p>
+        </Alert>
       </div>
     </form>
   );

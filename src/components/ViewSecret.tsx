@@ -48,7 +48,7 @@ export default function ViewSecret({ id, password }: Props) {
   if (isSuccess) {
     return (
       <>
-        <Panel title="Your secret">
+        <Panel title="Your One Time Secret">
           <ViewSecretResult secret={data.secret} />
         </Panel>
         <CreateNewSecretButton onClick={async () => await router.push("/")} />
@@ -57,7 +57,7 @@ export default function ViewSecret({ id, password }: Props) {
   }
 
   return (
-    <Panel title="You've been sent a secret">
+    <Panel title="Your One Time Secret">
       <ViewSecretForm
         id={id}
         onSubmit={async (data: Values) => {

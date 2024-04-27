@@ -1,14 +1,8 @@
-// import Link from "next/link";
-
-// eslint-disable-next-line next-on-pages/no-nodejs-runtime
-// export const runtime = "nodejs";
-// https://github.com/cloudflare/next-on-pages/issues/413
-
 export default function NotFound() {
   return (
     <>
       <main className="w-full max-w-screen-md md:flex">
-        <div className="w-full p-8 md:pr-4 pb-8 md:border-r border-gray-800 dark:border-gray-200 text-center md:text-right text-6xl">
+        <div className="font-mono w-full p-8 md:pr-4 pb-8 md:border-r border-indigo-700 dark:border-indigo-200 text-center md:text-right text-6xl">
           <h1>404</h1>
         </div>
         <div className="w-full p-8 md:pl-4 block">

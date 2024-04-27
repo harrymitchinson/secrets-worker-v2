@@ -54,11 +54,12 @@ export default function ViewSecretForm({
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-s">
         <input {...register("id")} hidden={true} />
-        <div className="mb-4">
+        <div className="mb-8 space-y-4">
+          <p>{`You've been sent a secret!`}</p>
           <p>
-            Once you viewed the secret, you will not be able to view it again.
-            The secret will be destroyed when you click the button below and
-            will only exist in your browser session.
+            Once you have viewed the secret, you will not be able to view it
+            again. The secret will be destroyed when you click the button below
+            and will only exist in your browser session.
           </p>
         </div>
         <div className={`mb-8 ${hidePassword ? "hidden" : ""}`}>
