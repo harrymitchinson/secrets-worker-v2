@@ -38,7 +38,7 @@ export type Props = {
 
 export default function ViewSecret({ id, password }: Props) {
   const router = useRouter();
-  const { mutate, data, isPending, isSuccess, error } = useMutation<
+  const { mutateAsync, data, isSuccess, error } = useMutation<
     DecryptResponse,
     Error,
     Values,
@@ -57,13 +57,12 @@ export default function ViewSecret({ id, password }: Props) {
   }
 
   return (
-    <Panel title="Your secret is ready">
+    <Panel title="You've been sent a secret">
       <ViewSecretForm
         id={id}
         onSubmit={async (data: Values) => {
-          await mutate(data);
+          await mutateAsync(data);
         }}
-        disabled={isPending}
         error={error!}
         password={password}
       />

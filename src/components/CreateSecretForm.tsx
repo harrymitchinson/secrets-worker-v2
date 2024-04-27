@@ -13,7 +13,6 @@ export interface TTL {
 
 export interface Props {
   ttls: TTL[];
-  disabled: boolean;
   onSubmit: (data: Values) => Promise<void>;
 }
 
@@ -27,10 +26,8 @@ export default function CreateSecretForm({ ttls, onSubmit }: Props) {
     register,
     handleSubmit,
     setFocus,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
   } = useForm<Values>();
-
-  const disabled = false;
 
   useEffect(() => {
     setFocus("secret");
@@ -40,30 +37,34 @@ export default function CreateSecretForm({ ttls, onSubmit }: Props) {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-s">
         <div className="mb-8">
-          <label className="block font-bold" htmlFor="secret">
-            Secret content
+          <label htmlFor="secret">
+            <div className="font-bold">Secret content</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              The data that you wish to share secretly
+            </div>
           </label>
-          <div className="block text-sm text-gray-500 dark:text-gray-400 mb-4">
-            The data that you wish to share secretly
-          </div>
+
           <textarea
+            id="secret"
             rows={7}
             title="Secret content"
-            className="font-mono block appearance-none w-full rounded bg-gray-100 dark:bg-gray-700 border border-gray-300  dark:border-gray-600 dark:hover:border-gray-500 mt-2 px-4 py-2 pr-8 shadow focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
+            className="mt-4 font-mono block appearance-none w-full rounded bg-gray-100 dark:bg-gray-700 border border-gray-300  dark:border-gray-600 dark:hover:border-gray-500 px-4 py-2 pr-8 shadow focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
             {...register("secret", { required: "This is required", min: 1 })}
           />
           {errors.secret && <Error>{errors.secret.message?.toString()}</Error>}
         </div>
 
         <div className="mb-8">
-          <label className="block font-bold" htmlFor="ttl">
-            Time to live (TTL)
+          <label htmlFor="ttl">
+            <div className="font-bold">Time to live (TTL)</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              How long the secret should exist for before deletion if not viewed
+            </div>
           </label>
-          <div className="block text-sm text-gray-500 dark:text-gray-400 mb-4">
-            How long the secret should exist for before deletion if not viewed
-          </div>
-          <div className="inline-block relative w-full">
+
+          <div className="inline-block relative w-full mt-2">
             <select
+              id="ttl"
               title="Time to live"
               className="block appearance-none rounded w-full bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500 mt-2 px-4 py-2 pr-8 shadow focus:outline focus:outline-indigo-500 focus:outline-2 focus:outline-offset-2"
               {...register("ttl", { required: true })}
@@ -87,10 +88,10 @@ export default function CreateSecretForm({ ttls, onSubmit }: Props) {
           </div>
         </div>
         <Button
-          disabled={disabled || !isValid}
-          title={disabled ? "Loading..." : "Create secret link"}
+          disabled={isSubmitting || !isValid}
+          title={isSubmitting ? "Loading..." : "Create secret link"}
         >
-          {disabled ? "Loading..." : "Create secret link"}
+          {isSubmitting ? "Loading..." : "Create secret link"}
         </Button>
       </form>
     </>

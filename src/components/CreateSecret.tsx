@@ -14,19 +14,18 @@ export type Props = {
 };
 
 export default function CreateSecret({ ttls }: Props) {
-  const { mutate, data, isPending, isSuccess, reset, isError, error } =
-    useMutation({
-      mutationFn: async ({ secret, ttl }: Values): Promise<EncryptResponse> => {
-        const res = await fetch("/api/encrypt", {
-          body: JSON.stringify({ secret, ttl }),
-          method: "POST",
-        });
-        if (res.status == 200) {
-          return res.json();
-        }
-        throw new Error(`bad api response: ${res.status}`);
-      },
-    });
+  const { mutateAsync, data, isSuccess, reset, isError, error } = useMutation({
+    mutationFn: async ({ secret, ttl }: Values): Promise<EncryptResponse> => {
+      const res = await fetch("/api/encrypt", {
+        body: JSON.stringify({ secret, ttl }),
+        method: "POST",
+      });
+      if (res.status == 200) {
+        return res.json();
+      }
+      throw new Error(`bad api response: ${res.status}`);
+    },
+  });
 
   if (isError) {
     throw error;
@@ -50,9 +49,8 @@ export default function CreateSecret({ ttls }: Props) {
     <Panel title="Create a secret">
       <CreateSecretFrom
         ttls={ttls}
-        disabled={isPending}
         onSubmit={async (data: Values) => {
-          await mutate(data);
+          await mutateAsync(data);
         }}
       />
     </Panel>
